@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.3/ionicons.min.css" integrity="sha512-0Mw/u3C/qb3y7GKMIpxu7CTvV4wPxT16MnxQoRWI+bkcYERELy7/JZEn/czr1lPp1L+XyqCJ3I9ohb5Fmc+e6w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .third {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 400px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-icons {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .input-container {
+            position: relative;
+            width: 280px;
+            margin: 20px auto;
+        }
+
+        .input-field {
+            width: 90%;
+            height: 35px;
+            background-color: transparent;
+            border-radius: 20px;
+            border: 2px solid rgb(40, 33, 33);
+            padding-left: 30px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: rgba(0, 0, 0, 0.715);
+        }
+
+        .check {
+            color: white;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+            margin-left: 55px;
+        }
+
+        .check label {
+            margin-left: 5px;
+        }
+
+        button[type="submit"] {
+            width: 140px;
+            height: 35px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 5px;
+            background-color: rgb(73, 149, 236);
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(227, 98, 52);
+        }
+
+        .subs {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-top: 10px;
+        }
+
+        .subs a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .subs a:hover {
+            text-decoration: underline;
+        }
+
+        .para {
+            color: white;
+        }
+
+        .ion {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .ion-icon {
+            font-size: 25px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .i1 {
+            color: rgb(115, 115, 247);
+            padding-right: 20px;
+            font-size: 30px;
+        }
+
+        .i2 {
+            color: rgb(71, 71, 226);
+            padding-right: 20px;
+            font-size: 30px;
+        }
+
+        .i3 {
+            color: rgb(239, 48, 48);
+            font-size: 30px;
+        }
+
+        .i1:hover, .i2:hover, .i3:hover {
+            color: white;
+        }
+
+        /* Added CSS for profile image */
+        .third img {
+            width: 100px; /* Adjust the width as needed */
+            height: 100px; /* Adjust the height as needed */
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            margin-bottom: 15px; /* Adds spacing below the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="third">
+        <img src="https://i.pinimg.com/474x/8e/0c/fa/8e0cfaf58709f7e626973f0b00d033d0.jpg" alt="Profile Image">
+        <form id="loginForm" action="/login" method="post">
+            <div class="input-icons">
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="email" id="email" name="email" placeholder="email">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-lock icon"></i>
+                    <input class="input-field" type="password" id="password" name="password" placeholder="password">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="keep">
+                <label for="keep">Keep me logged in</label>
+            </div>
+            <button type="submit">SIGN IN</button>
+            <button type="submit">SIGN UP</button>
+            <div class="subs">
+                <a href="#">Forgot Password?</a>
+                <a href="#">New user? Register</a>
+            </div>
+            <p class="para">Or Login Using</p>
+            <div class="ion">
+                <ion-icon class="i1" name="logo-facebook"></ion-icon>
+                <ion-icon class="i2" name="logo-twitter"></ion-icon>
+                <ion-icon class="i3" name="logo-google"></ion-icon>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Basic form validation script
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Clear previous error messages
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            // Validate email
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('emailError');
+            if (!email || !/\S+@\S+\.\S+/.test(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            // Validate password
+            const password = document.getElementById('password').value;
+            const passwordError = document.getElementById('passwordError');
+            if (!password || password.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+</html>
